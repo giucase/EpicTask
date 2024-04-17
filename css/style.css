@@ -17,7 +17,17 @@ body{
             grid-template-columns: 1fr 1fr 1fr;
         
     } */
-
-
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 2rem auto;
+    gap: 2rem;
+}
+
+.acoes{
+    display: flex;
+    justify-content: space-around;
+}
