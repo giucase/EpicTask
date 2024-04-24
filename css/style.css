@@ -5,7 +5,7 @@ body{
 #lista-de-tarefas{
     /* mobilefirts*/
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) r;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
 
     /* nesting css*/
@@ -30,4 +30,17 @@ form{
 .acoes{
     display: flex;
     justify-content: space-around;
+}
+
+#test_mamu{
+    width: 327px;
+    height: 595px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#botoes_mamu{
+    flex-direction: column;
 }
