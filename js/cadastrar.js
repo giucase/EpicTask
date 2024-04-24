@@ -2,17 +2,26 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
 
     const form = document.querySelector("form")
 
-    const tarefa = {
+    const filme = {
         titulo: form.titulo.value,
         descricao: form.descricao.value,
         pontos: form.pontos.value,
         cartaz: form.cartaz.value
     }
 
-    validar(tarefa)
+    validar(filme)
+
+    salvar(filme)
+
+    function salvar (){
+        const filmes = JSON.parse(localStorage.getItem("filmes")) || []
+        filmes.push(filme)
+        localStorage.setItem("Filmes", JSON.stringify(filmes))
+        window.location.href ="index.html"
+    }
 
     function validar(tarefa){
-        /*limparErros()*/
+        limparErros()
     
         if (tarefa.titulo.trim() == ""){
             document.querySelector("#titulo").classList.add("is-error")
@@ -32,15 +41,19 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
         }
     }
     
-    /*function limparErros(){
-        //Todo precorrer arry
-        document
-        .querySelectorAll("input .is-error, textarea is-error")
-        .classList
-        .remove("is-error")
-    }*/
+     //Todo precorrer arry
+    function limparErros(){
+        const campos = document
+            .querySelectorAll("input.is-error, textarea.is-error")
+        console.log(campos)
+       
+        campos
+            .forEach((input) => {input.classList.remove("is-error")})
+        document.querySelectorAll(".nes-field span")
+            .forEach(span => span.innerText = "")
+    }
     
-    console.log(tarefa)
+    
 
 })
 
