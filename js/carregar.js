@@ -22,13 +22,16 @@ function card (filmes){
     ></progress>
     <div id="botoes_mamu">
       <button type="button" class="nes-btn is-primary">-</button>
-      <button type="button" class="nes-btn is-error">Sumir</button>
+      <button onClick="dec('${filme.id}')" type="button" class="nes-btn is-primary">-</button>
+      <button onClick="apagar('${filme.id}')" type="button" class="nes-btn is-error">Sumir</button>
+      <button onClick="inc('${filme.id}')" type="button" class="nes-btn is-primary">+</button>
       <button type="button" class="nes-btn is-primary">+</button>
     </div>
   </div>
     
     ` 
     const card = document.createElement("div")
+    card.id = filme.id
     card.innerHTML = cardFilmes
     document.querySelector("#lista-de-tarfas").appendChild(card)
 }

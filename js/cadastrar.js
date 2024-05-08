@@ -3,6 +3,7 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
     const form = document.querySelector("form")
 
     const filme = {
+        id: "id_" + new Date().getTime(),
         titulo: form.titulo.value,
         descricao: form.descricao.value,
         pontos: form.pontos.value,
@@ -16,7 +17,7 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
     function salvar (){
         const filmes = JSON.parse(localStorage.getItem("filmes")) || []
         filmes.push(filme)
-        localStorage.setItem("Filmes", JSON.stringify(filmes))
+        localStorage.setItem("filmes", JSON.stringify(filmes))
         window.location.href ="index.html"
     }
 
